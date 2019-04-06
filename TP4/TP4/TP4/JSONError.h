@@ -2,6 +2,12 @@
 
 #ifndef JSONError_H
 #define JSONError_H
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
 /* Clase que permite trasmitir errores generados al utilizar JSONObject
 * si no hubo error se puede generar un JSONError err que al llamar a
 * err.hasFailed() devuelve false y getErrorString() devuelve "No error"

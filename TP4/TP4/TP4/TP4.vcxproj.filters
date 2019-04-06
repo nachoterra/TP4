@@ -18,9 +18,15 @@
     <ClCompile Include="JSONObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JSONError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="JSONObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
