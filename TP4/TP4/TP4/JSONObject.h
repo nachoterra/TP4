@@ -8,7 +8,7 @@
 #include <iostream>
 #include "JSONField.h"
 #include "JSONError.h"
-#include "field.h"
+
 
 using namespace std;
 
@@ -209,7 +209,7 @@ public:
 	private:
 
 		unsigned int FieldCount;
-		field * fields;;
+		JSONField * fields;;
 
 
 };

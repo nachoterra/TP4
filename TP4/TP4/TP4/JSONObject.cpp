@@ -1,5 +1,5 @@
 #include "JSONObject.h"
-#include "field.h"
+#include "JSONField.h"
 
 
 
@@ -56,11 +56,11 @@ JSONObject::copyField(const char * f)
 
     for(i = 0; i < FieldCount && !found;  i ++)
     {
-        found = fields[i].fieldname == f;
+        found = fields[i].fieldName == f;
     }
     if(found)
     {
-        if(fields[i].fieldtype == "object")
+        if(fields[i].fieldType == "object")
         {
             JSONObject *  = new JSONObject(fields[i].content);
         }
