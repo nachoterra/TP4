@@ -4,8 +4,11 @@
 
 JSONField::JSONField()
 {
-
+	fieldType = NULL;
+	content = string(NULL);
+	fieldName = string(NULL);
 }
+	
 
 
 void 

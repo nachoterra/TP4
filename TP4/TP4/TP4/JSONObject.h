@@ -166,7 +166,8 @@ public:
 	* un campo por línea.
 	*/
 	void print(void);
-	/* Devuelve en su nombre un JSONError según se explica abajo*/
+	/* Devuelve en su nombre un JSONError según se explica abajo
+	*/
 	JSONError getError(void);
 
 
@@ -205,6 +206,9 @@ public:
 	*/
 
 	private:
+
+		unsigned int FieldCount;
+
 
 };
 #endif

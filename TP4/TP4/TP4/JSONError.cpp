@@ -16,8 +16,7 @@ bool
 JSONError::hasFailed(void)
 {
 
-	return true;
-	return false;
+	return error;
 }
 
 void

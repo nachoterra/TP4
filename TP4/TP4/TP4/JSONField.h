@@ -9,6 +9,7 @@ class JSONField
 public:
 	
 	JSONField();
+
 	void setFieldType(const char* s);
 	void setFieldName(string str);
 	void setContent(string str);

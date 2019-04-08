@@ -31,7 +31,7 @@ public:
 private:
 
 	string errorString;
-
+	bool error;
 
 };
 
