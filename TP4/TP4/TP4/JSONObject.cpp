@@ -1,5 +1,5 @@
 #include "JSONObject.h"
-#include "JSONError.h"
+
 
 
 JSONObject::JSONObject()
@@ -22,6 +22,24 @@ JSONObject::getFieldCount(void)
 {
 
 }
+
+const char * 
+JSONObject::getFieldType(const char * f)
+{
+
+}
+
+const char * 
+JSONObject::getArrayType(const char * f)
+{
+
+}
+unsigned int 
+JSONObject::getFieldSize(const char * f)
+{
+
+}
+
 
 bool 
 JSONObject::isFieldPresent(const char * f)

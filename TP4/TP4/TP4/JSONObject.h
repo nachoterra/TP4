@@ -6,6 +6,8 @@
 
 #include <string>
 #include <iostream>
+#include "JSONField.h"
+#include "JSONError.h"
 
 using namespace std;
 
@@ -45,7 +47,41 @@ public:
 	* "number" si el campo f contiene un número.
 	* "bool" si el campo f contiene "true" o "false"
 	* "invalid" si el campo f no pertenece al JSONObject. En este último
-	* caso genera un error que almacena in
+	* caso genera un error que almacena internamente
+	*/
+	const char * getFieldType(const char * f);
+
+	/* Devuelve en su nombre el tipo de elemento del array f (f es un campo
+	* dentro del JSONObject de tipo array).
+	* Los posibles tipos son (todos en minúscula):
+	* "object" si el array f contiene un objeto JSON.
+	* "array" si el array f contiene un array.
+	* "string" si el array f contiene un string.
+	* "number" si el array f contiene un número.
+	* "bool" si el array f contiene "true" o "false"
+	* "invalid" si el array f no pertenece al JSONObject. En este último
+	* caso genera un error que almacena internamente
+	* Nota: en el caso de que se encuentren elementos null dentro del
+	* array, los vamos a tomar como objetos JSON vacíos
+	* por lo que ante un null vamos a tomar que su "tipo" es object.
+	*/
+	const char * getArrayType(const char * f);
+	/* Devuelve en su nombre el tamaño del campo f, donde por tamaño se
+	* entiende:
+	* si f es de tipo "object" la cantidad de campos que tiene el objeto
+	* (pensar si en este caso conviene generar un JSONObject temporal) con
+	* el contenido del campo f y devolver getFieldCount de dicho objeto).
+	* si f es de tipo "array" devuelve la cantidad de elementos en el
+	* arreglo.
+	* si f es de tipo "string" devuelve la cantidad de caracteres en el
+	* string.
+	* si f es de tipo "number" devuelve sizeof(double).
+	* si f es de tipo "bool" devuelve sizeof(bool).
+	* si f es no pertenece al objeto devuelve 0. En este último caso genera
+	* un error que almacena internamente
+	*/
+	unsigned int getFieldSize(const char * f);
+
 	/* Devuelve true si el campo f se encuentra dentro del JSONObject
 	* (primera iteración).
 	* No tiene que iterar por todos los objetos JSON contenidos dentro del
@@ -167,5 +203,8 @@ public:
 	* único caso en que un objeto JSON puede tener valores sin estar asociados
 	* a una campo.
 	*/
+
+	private:
+
 };
 #endif
