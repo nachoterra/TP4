@@ -1,4 +1,5 @@
 #include "JSONObject.h"
+#include "field.h"
 
 
 
@@ -50,6 +51,24 @@ JSONObject::isFieldPresent(const char * f)
 void * 
 JSONObject::copyField(const char * f)
 {
+    bool found = false;
+    int i;
+
+    for(i = 0; i < FieldCount && !found;  i ++)
+    {
+        found = fields[i].fieldname == f;
+    }
+    if(found)
+    {
+        if(fields[i].fieldtype == "object")
+        {
+            JSONObject *  = new JSONObject(fields[i].content);
+        }
+        else if (             )
+        {
+            double * = new double (stod(fields[i].content))
+        }
+    }
 
 }
 
