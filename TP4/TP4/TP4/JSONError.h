@@ -23,6 +23,16 @@ class JSONError
 public:
 
 	JSONError(bool hasFailed = false, const char * Desc = NULL);
-	string getErorString(void);
+	string getErrorString(void);
 	bool hasFailed(void);
-};#endif
+
+	void setErrorString(string);
+
+private:
+
+	string errorString;
+
+
+};
+
+#endif
